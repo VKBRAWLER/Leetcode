@@ -13,7 +13,9 @@ public:
         while (!q.empty()) {
             node = q.front();
             q.pop();
-            for (auto& [neighbor, sign] : adj[node]) {
+            for (auto& p : adj[node]) {
+                int neighbor = p.first;
+                int sign = p.second;
                 if (!visit[neighbor]) {
                     count += sign;
                     visit[neighbor] = true;
